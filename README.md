@@ -5,8 +5,12 @@ enter a russian word, get a list of declensions/conjugations and audio pronuncia
 
 demo using GH pages and heroku for the server/api: https://kharitonov.github.io/russian-pronunciations/
 
+copy and paste these for test words if you'd like: перевод, учить, огромный, ебать
+
+a root word has to be used to get results
+
 built using create-react-app 
-using: cheerio, express, requests (server), node, react
+using: cheerio, express, requests, node, react
 
 
 it parses the wiktionary page for the root word, and then gets a list of pronunciations from forvo. it might be buggy due to the parsing
@@ -29,6 +33,6 @@ add a 'no results found' visual
 
 add a root word definition somewhere
 
-add other languages, maybe
+allow it to parse other languages
 
-words[] is improperly scoped in the server
+lower the volume

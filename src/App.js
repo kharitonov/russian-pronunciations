@@ -3,10 +3,7 @@ import logo from './Streamline-61-512.png';
 import './App.css';
 import volIcon from './1497928788_volume.png'
 
-const host = 'http://127.0.0.1:8080';
-
-// https://young-bastion-54874.herokuapp.com
-//const port = '1700';
+const host = 'https://young-bastion-54874.herokuapp.com';
 
 function Word(word, links) {
   this.word = word;
@@ -72,13 +69,14 @@ class FetchWords extends React.Component {
       this.state.Words.push(new Word(arg, Links));
       this.setState({ hideResult: '' });
     });
-
   };
 
   render() {
     return (
       <div className="ff">
-        <form onSubmit={this.handleEvent}><input value={this.state.searchWord} className="container1" onChange={this.handleChange} onSubmit={this.handleEvent} /></form><button className="button" onClick={this.handleEvent}>Search</button>
+        <form onSubmit={this.handleEvent}>
+          <input value={this.state.searchWord} className="container1" onChange={this.handleChange} onSubmit={this.handleEvent} /></form>
+        <button className="button" onClick={this.handleEvent}>Search</button>
 
         <p className={this.state.hideResult ? 'hidden' : ''} style={{ animation: 'fadein 5s', font: 'Ubuntu' }}>
           <RenderLinks className="text" list={this.state.Words} />
