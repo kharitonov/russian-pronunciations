@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './Streamline-61-512.png';
 import './App.css';
-
-var request = require('request');
+import volIcon from './1497928788_volume.png'
 
 const host = 'https://young-bastion-54874.herokuapp.com';
 //const port = '1700';
@@ -22,20 +21,20 @@ class App extends Component {
 
         </div>
         <p className="App-intro">
-          Enter a Russian word to hear pronounciations of the declensions and conjugations.
+          Enter a Russian word (in Cyrillic) to hear pronunciations of the declensions and conjugations.
         </p>
-        <Testing />
+        <FetchWords />
       </div>
     );
   }
 }
 
 
-class Testing extends React.Component {
+class FetchWords extends React.Component {
 
   constructor() {
     super();
-    this.state = { testing: '', searchWord: '', mp3Path: '', Words: [], mp3Paths: [], pathsArray: [], hideResult: true };
+    this.state = { searchWord: '', Words: [], hideResult: true };
     this.handleEvent = this.handleEvent.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.fetchAPI = this.fetchAPI.bind(this);
@@ -44,15 +43,7 @@ class Testing extends React.Component {
   handleEvent(e) {
 
     e.preventDefault();
-    var options = {
-      url: host + '/word/' + encodeURI(this.state.searchWord),
-      headers: {
-        'User-Agent': 'request',
-      }
-    };
-
-    fetch(host+'/word/' + (encodeURI(this.state.searchWord))).then((response) => response.json()).then((responseJson) => {
-      this.setState({ testing: responseJson });
+    fetch(host + '/word/' + (encodeURI(this.state.searchWord))).then((response) => response.json()).then((responseJson) => {
       for (var x in responseJson) {
         var tempword = (responseJson[x].normalize('NFD').replace(/[\u0300-\u036f]/g, ""));
         this.fetchAPI(tempword)
@@ -72,7 +63,7 @@ class Testing extends React.Component {
   fetchAPI(arg) {
 
     var Links = [];
-    fetch(host+'/forvo/' + (encodeURI(arg))).then((response) => response.json()).then((responseJson) => {
+    fetch(host + '/forvo/' + (encodeURI(arg))).then((response) => response.json()).then((responseJson) => {
       for (var y in responseJson['items']) {
         Links.push(responseJson['items'][y]['pathmp3']);
       }
@@ -88,14 +79,14 @@ class Testing extends React.Component {
         <form onSubmit={this.handleEvent}><input value={this.state.searchWord} className="container1" onChange={this.handleChange} onSubmit={this.handleEvent} /></form><button className="button" onClick={this.handleEvent}>Search</button>
 
         <p className={this.state.hideResult ? 'hidden' : ''} style={{ animation: 'fadein 5s', font: 'Ubuntu' }}>
-          <NumberList className="text" list={this.state.Words} />
+          <RenderLinks className="text" list={this.state.Words} />
         </p>
       </div>
     )
   }
 }
 
-function NumberList(props) {
+function RenderLinks(props) {
   var passlist = [];
   const list = props.list;
   for (var x in list) {
@@ -125,7 +116,7 @@ function playNoise(arg) {
     var tempaudio = new Audio(arg);
     tempaudio.play();
     return false;
-  }}>        <img className="item" src='/1497928788_volume.png' width='15' height='15' /></a>
+  }}>        <img className="item" src={volIcon} width='15' height='15' /></a>
 }
 
 
