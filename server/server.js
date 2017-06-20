@@ -3,7 +3,7 @@ const cheerio = require('cheerio')
 var express = require('express');
 var app = express();
 
-var Words = [];
+
 var port = process.env.PORT || 8080;
 var server = app.listen(port, function () {
     var host = server.address().address;
@@ -20,8 +20,7 @@ function getContent(options, res) {
 }
 
 function attemptParse(body, res) {
-
-
+    let Words = [];
     const $ = cheerio.load(body);
     $('td').find('span.Cyrl').map(function (i, el) {
         $(this).each(function (i, element) {
@@ -30,7 +29,6 @@ function attemptParse(body, res) {
         })
     }).get().join(' ');
     res.send(Words);
-    Words = [];
 
 }
 
@@ -76,8 +74,8 @@ function fetchSoundID(options, res, wordParam) {
         function (error, response, body) {
             parseForID(body, res);
         });
-    
-    
+
+
     var form = r.form();
     form.append('action', 'word-pronunciations');
     form.append('format', 'json');

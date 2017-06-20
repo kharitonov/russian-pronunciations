@@ -3,7 +3,9 @@ import logo from './Streamline-61-512.png';
 import './App.css';
 import volIcon from './1497928788_volume.png'
 
-const host = 'https://young-bastion-54874.herokuapp.com';
+const host = 'http://127.0.0.1:8080';
+
+// https://young-bastion-54874.herokuapp.com
 //const port = '1700';
 
 function Word(word, links) {
@@ -45,7 +47,7 @@ class FetchWords extends React.Component {
     e.preventDefault();
     fetch(host + '/word/' + (encodeURI(this.state.searchWord))).then((response) => response.json()).then((responseJson) => {
       for (var x in responseJson) {
-        var tempword = (responseJson[x].normalize('NFD').replace(/[\u0300-\u036f]/g, ""));
+        var tempword = (responseJson[x].normalize('NFD').replace(/[\u0300-\u036f]/g, "")); // replace accented chars so the query works
         this.fetchAPI(tempword)
       }
 
@@ -115,8 +117,8 @@ function playNoise(arg) {
     event.preventDefault();
     var tempaudio = new Audio(arg);
     tempaudio.play();
-    return false;
-  }}>        <img className="item" src={volIcon} width='15' height='15' /></a>
+  }}>
+    <img className="item" src={volIcon} width='15' height='15' /></a>
 }
 
 
