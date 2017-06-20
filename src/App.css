@@ -1,0 +1,116 @@
+.App {
+  text-align: center;
+        -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+.App-logo {
+  height: 80px;
+}
+
+.App-logo:hover {
+  animation: wiggle linear infinite alternate .5s;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #5B6166;
+  height: 80px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #0E0E0D;
+  -webkit-font-smoothing: antialiased;
+ 
+}
+
+
+.links {
+  list-style-type: none;
+  font-size: medium;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: inline-block;
+  text-align: center;
+}
+
+.item {}
+
+
+.item:hover
+{
+  transform: scale(1.35);
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+@keyframes wiggle {
+    from { transform: scale(1); }
+    to   { transform: scale(1.15) }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+.button {
+    font-family: monospace;
+    background-color: #5D656A;
+    border: 0;
+    margin-top: 5px;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    letter-spacing: 3px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    
+}
+
+.button:hover
+{
+  background-color: #5E6972;
+  font: Roboto;
+}
+
+
+
+
+.container1{
+  display:inline-block;
+  text-align: center;
+  width: 300px;
+  height: 50px;
+  background: #5D656A;
+  border: none;
+  float: none;
+  font-size: 25pt;
+  color: whitesmoke;
+  padding-left: 0px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 7px;
+}
+
+.container1:hover
+{
+  background-color: #5E6972;
+}
