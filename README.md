@@ -9,7 +9,8 @@ copy and paste these for test words if you'd like: перевод, учить, �
 
 a root word has to be used to get results
 
-built using create-react-app 
+built using create-react-app
+ 
 using: cheerio, express, requests, node, react
 
 
