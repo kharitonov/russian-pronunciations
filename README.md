@@ -7,7 +7,7 @@ demo using GH pages and heroku for the server/api: https://kharitonov.github.io/
 
 copy and paste these for test words if you'd like: перевод, учить, огромный, ебать
 
-a root word has to be used to get results
+a root word has to be used to get results. also there's no visual to indicate loading/pending request at the moment, but it can take like 8 seconds to render the results
 
 built using create-react-app
  
@@ -22,6 +22,8 @@ it parses the wiktionary page for the root word, and then gets a list of pronunc
 <br/><br/>
 <b>to do:</b>
 
+add a 'no results found' visual and a visual for loading -- if the request is made over a slow connection it looks as if nothing is happening
+
 better formatting for longer results
 
 remove useless entries from the returned results, ie: будем знать 
@@ -29,8 +31,6 @@ remove useless entries from the returned results, ie: будем знать
 add option to clear previous results on new search
 
 change the search to find the root word if a conjugation / declension is searched
-
-add a 'no results found' visual
 
 add a root word definition somewhere
 
