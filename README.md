@@ -1,9 +1,9 @@
 # russian-pronunciations
+
+
 enter a russian word, get a list of declensions/conjugations and audio pronunciations
 
 ![alt text](https://github.com/kharitonov/russian-pronunciations/blob/master/screenshot.png)
-
-demo using GH pages and heroku for the server/api: https://kharitonov.github.io/russian-pronunciations/
 
 copy and paste these for test words if you'd like: перевод, учить, огромный, ебать
 
