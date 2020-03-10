@@ -17,25 +17,3 @@ using: cheerio, express, requests, node, react
 
 
 it parses the wiktionary page for the root word, and then gets a list of pronunciations from forvo. it might be buggy due to the parsing
-
-
-
-
-<br/><br/>
-<b>to do:</b>
-
-add a 'no results found' visual and a visual for loading -- if the request is made over a slow connection it looks as if nothing is happening
-
-better formatting for longer results
-
-remove useless entries from the returned results, ie: будем знать 
-
-add option to clear previous results on new search
-
-change the search to find the root word if a conjugation / declension is searched
-
-add a root word definition somewhere
-
-allow it to parse other languages
-
-lower the volume
