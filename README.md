@@ -1,5 +1,7 @@
 # russian-pronunciations
 
+demo using GH pages and heroku for the server/api: https://kharitonov.github.io/russian-pronunciations/
+
 
 enter a russian word, get a list of declensions/conjugations and audio pronunciations
 
